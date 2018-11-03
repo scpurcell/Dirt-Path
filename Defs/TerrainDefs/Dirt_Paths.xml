@@ -1,56 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- Can be packed into a hard surface -->
+  <TerrainAffordanceDef>
+    <defName>Packable</defName>
+    <label>packable</label>
+    <order>3500</order>
+  </TerrainAffordanceDef>
 
-  <TerrainDef Name="FloorBase" Abstract="True">
-    <edgeType>FadeRough</edgeType>
-    <layerable>true</layerable>
-    <affordances>
-      <li>Light</li>
-      <li>Heavy</li>
-      <li>SmoothHard</li>
-    </affordances>
-    <takeFootprints>True</takeFootprints>
-    <statBases>
-      <WorkToBuild>135</WorkToBuild>
-    </statBases>
-    <designationCategory>Floors</designationCategory>
-    <fertility>0</fertility>
-    <constructEffect>ConstructDirt</constructEffect>
-    <terrainAffordanceNeeded>GrowSoil</terrainAffordanceNeeded>
-    </TerrainDef>
-
-
-
-  <!-- ================= Misc ================= -->
-
-	<TerrainDef ParentName="FloorBase">
-		<defName>DirtPath</defName>
-		<label>dirt path</label>
-		<description>Simple dirt pathway</description>
-		<texturePath>Terrain/Surfaces/DirtPath</texturePath>
-    <edgeType>FadeRough</edgeType>
-		<renderPrecedence>320</renderPrecedence>
-    <scatterType>Rocky</scatterType>
-		<statBases>
-		<Beauty>1</Beauty>
-		<WorkToBuild>35</WorkToBuild>
-		</statBases>
-		<costList></costList>
-	</TerrainDef>
 
   <TerrainDef ParentName="FloorBase">
-    <defName>DirtPath2</defName>
+    <defName>DirtPath</defName>
+    <label>dirt path</label>
+    <description>Simple dirt pathway</description>
+    <texturePath>Terrain/Surfaces/DirtPath</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <takeFootprints>True</takeFootprints>
+    <renderPrecedence>320</renderPrecedence>
+    <scatterType>Rocky</scatterType>
+    <statBases>
+    	<Beauty>1</Beauty>
+      <WorkToBuild>35</WorkToBuild>
+    </statBases>
+    <terrainAffordanceNeeded>Packable</terrainAffordanceNeeded>
+    <costList></costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="FloorBase">
+    <defName>DirtPathLight</defName>
     <label>dirt path alt</label>
     <description>Alternate dirt pathway, Lighter style</description>
     <texturePath>Terrain/Surfaces/DirtPath2</texturePath>
     <edgeType>FadeRough</edgeType>
+    <takeFootprints>True</takeFootprints>
     <renderPrecedence>320</renderPrecedence>
     <scatterType>Rocky</scatterType>
     <statBases>
-    <Beauty>1</Beauty>
-    <WorkToBuild>35</WorkToBuild>
+      <Beauty>1</Beauty>
+      <WorkToBuild>35</WorkToBuild>
     </statBases>
+    <terrainAffordanceNeeded>Packable</terrainAffordanceNeeded>
     <costList></costList>
   </TerrainDef>
 
@@ -60,12 +49,14 @@
     <description>Packed dirt</description>
     <texturePath>Terrain/Surfaces/PackedDirt</texturePath>
     <edgeType>FadeRough</edgeType>
+    <takeFootprints>True</takeFootprints>
     <renderPrecedence>320</renderPrecedence>
     <scatterType>Rocky</scatterType>
     <statBases>
-    <Beauty>1</Beauty>
-    <WorkToBuild>35</WorkToBuild>
+      <Beauty>1</Beauty>
+      <WorkToBuild>35</WorkToBuild>
     </statBases>
+    <terrainAffordanceNeeded>Packable</terrainAffordanceNeeded>
     <costList></costList>
   </TerrainDef>
 
